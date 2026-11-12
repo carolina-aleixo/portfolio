@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Portfólio de Carolina Aleixo</title>
+<meta name="description" content="Carolina Aleixo, pesquisadora de audiovisual e montadora no Rio de Janeiro.">
+<meta property="og:title" content="Carolina Aleixo">
+<meta property="og:description" content="Pesquisadora de audiovisual e montadora no Rio de Janeiro.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500;700;800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  /* Layout: a trajetória vira uma timeline de ilha de edição (faixas V e A); cada faixa leva a uma seção de trabalhos logo abaixo. */
+  --paper: #F1F2F5;
+  --surface: #FFFFFF;
+  --ink: #1B1D2E;
+  --muted: #565A6E;
+  --line: #D6D9E2;
+  --indigo: #4A4FBF;
+  --teal: #17736D;
+  --amber: #A8720F;
+  --rose: #B03A5E;
+  --panel: #23263B;
+  --panel-2: #2B2F48;
+  --panel-line: #3D4260;
+  --panel-text: #C9CCE0;
+  --panel-strong: #F4F4FA;
+  --clip-montagem: #5A5FD0;
+  --clip-autoral: #C2476A;
+  --clip-formacao: #1E8A83;
+  --clip-educacao: #E0AA44;
+  --font-display: "Big Shoulders Display", "Arial Narrow", "Roboto Condensed", sans-serif;
+  --font-body: "Newsreader", Georgia, "Times New Roman", serif;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #17192A;
+    --surface: #1F2236;
+    --ink: #E8E9F2;
+    --muted: #A4A8BE;
+    --line: #343852;
+    --indigo: #9A9FF5;
+    --teal: #55C4BB;
+    --amber: #E7B550;
+    --rose: #EA82A3;
+    --panel: #10121F;
+    --panel-2: #181B2D;
+    --panel-line: #2E3250;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #17192A;
+  --surface: #1F2236;
+  --ink: #E8E9F2;
+  --muted: #A4A8BE;
+  --line: #343852;
+  --indigo: #9A9FF5;
+  --teal: #55C4BB;
+  --amber: #E7B550;
+  --rose: #EA82A3;
+  --panel: #10121F;
+  --panel-2: #181B2D;
+  --panel-line: #2E3250;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 18px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: inherit; }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--indigo); outline-offset: 3px; border-radius: 2px; }
+h1, h2, h3 { text-wrap: balance; margin: 0; }
+p { margin: 0; }
+.wrap { width: min(1120px, 100% - 40px); margin-inline: auto; }
+
+/* Barra de navegação */
+.nav {
+  position: sticky; top: 0; z-index: 10;
+  background: color-mix(in srgb, var(--paper) 88%, transparent);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--line);
+}
+.nav .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 56px; }
+.nav-name { font-family: var(--font-display); font-weight: 800; font-size: 22px; text-decoration: none; letter-spacing: .01em; }
+.nav-links { display: flex; gap: 18px; flex-wrap: wrap; justify-content: flex-end; }
+.nav-links a { font-family: var(--font-display); font-weight: 700; font-size: 17px; text-decoration: none; color: var(--muted); }
+.nav-links a:hover { color: var(--ink); }
+@media (max-width: 720px) { .nav-links { display: none; } }
+
+/* Abertura */
+.hero { padding: 56px 0 28px; }
+.hero h1 {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(76px, 15.5vw, 188px);
+  line-height: .84;
+  letter-spacing: -.005em;
+}
+.hero-row { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 32px; align-items: end; margin-top: 28px; }
+.lede { font-size: clamp(20px, 2.2vw, 24px); line-height: 1.45; max-width: 34em; }
+.hero-links { display: flex; flex-wrap: wrap; gap: 8px 10px; justify-content: flex-end; }
+.pill {
+  display: inline-flex; align-items: center; min-height: 40px; padding: 0 16px;
+  border: 1.5px solid var(--ink); border-radius: 999px;
+  font-family: var(--font-display); font-weight: 700; font-size: 17px; text-decoration: none;
+}
+.pill:hover { background: var(--ink); color: var(--paper); }
+.hero-grid { display: grid; grid-template-columns: minmax(0, 1fr) clamp(240px, 26vw, 320px); gap: 40px; align-items: end; }
+.hero-grid .hero-row { grid-template-columns: 1fr; gap: 22px; }
+.hero-grid .hero-links { justify-content: flex-start; }
+.portrait { margin: 0; }
+.portrait img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 30%; border-radius: 10px; background: var(--panel); }
+@media (max-width: 820px) {
+  .hero { padding-top: 24px; }
+  .hero-row { grid-template-columns: 1fr; }
+  .hero-links { justify-content: flex-start; }
+  .hero-grid { grid-template-columns: 1fr; gap: 24px; }
+  .portrait { order: -1; }
+  .portrait img { aspect-ratio: 16 / 11; object-position: 50% 26%; }
+}
+
+/* Timeline */
+.tl-figure { margin: 0; padding: 0 0 8px; }
+.tl-box { background: var(--panel); border-radius: 10px; color: var(--panel-text); overflow: hidden; }
+.tl-head {
+  display: flex; justify-content: space-between; align-items: baseline; gap: 12px;
+  padding: 12px 16px; border-bottom: 1px solid var(--panel-line);
+  font-family: var(--font-display); font-weight: 700; font-size: 16px;
+}
+.tl-head strong { color: var(--panel-strong); font-weight: 800; font-size: 18px; }
+.tl-scroll { overflow-x: auto; scrollbar-color: var(--panel-line) transparent; }
+.tl { --y0: 2012; --span: 16; min-width: 1120px; padding: 6px 16px 16px; position: relative; }
+.tl-row { display: grid; grid-template-columns: 118px 1fr; align-items: center; }
+.tl-label, .tl-corner { position: sticky; left: 0; z-index: 3; background: var(--panel); align-self: stretch; }
+.tl-label { font-family: var(--font-display); font-size: 14px; font-weight: 700; color: var(--panel-text); padding: 0 10px 0 0; display: flex; gap: 8px; align-items: center; box-shadow: 6px 0 8px -6px rgba(0,0,0,.6); }
+.tl-label b { color: var(--panel-strong); font-weight: 800; width: 22px; }
+.lane { position: relative; height: 34px; border-top: 1px solid var(--panel-line); background: var(--panel-2); }
+.tl-row:last-child .lane { border-bottom: 1px solid var(--panel-line); }
+.tl-row.first-a .lane { border-top: 3px solid var(--panel-line); }
+.ruler { height: 40px; position: relative; }
+.ruler span {
+  position: absolute; bottom: 4px;
+  left: calc((var(--y) - var(--y0)) / var(--span) * 100%);
+  font-family: var(--font-display); font-size: 13px; font-weight: 500; color: var(--panel-text);
+  font-variant-numeric: tabular-nums; padding-left: 4px; border-left: 1px solid var(--panel-line); line-height: 1;
+}
+.clip {
+  position: absolute; top: 4px; bottom: 4px;
+  left: calc((var(--a) - var(--y0)) / var(--span) * 100%);
+  width: calc((var(--b) - var(--a)) / var(--span) * 100%);
+  border-radius: 4px; padding: 0 5px;
+  display: flex; align-items: center;
+  font-family: var(--font-display); font-weight: 700; font-size: 13.5px; line-height: 1;
+  white-space: nowrap; overflow: hidden;
+  text-decoration: none; color: #fff;
+  box-shadow: inset 0 2px 0 rgba(255,255,255,.22), inset 0 -1px 0 rgba(0,0,0,.25);
+}
+.clip:hover { filter: brightness(1.12); }
+.clip.m { background: var(--clip-montagem); }
+.clip.au { background: var(--clip-autoral); }
+.clip.f { background: var(--clip-formacao); }
+.clip.e { background: var(--clip-educacao); color: #23190A; }
+.clip.tiny { overflow: visible; padding: 0; }
+.clip.tiny::after {
+  content: attr(data-label); position: absolute; left: calc(100% + 8px); top: 50%; transform: translateY(-50%);
+  color: var(--panel-strong);
+}
+.playhead {
+  position: absolute; top: 0; bottom: 16px; width: 0;
+  left: calc(16px + 118px + (100% - 32px - 118px) * (2026.87 - 2012) / 16);
+  border-left: 2px solid #FF5D5D; pointer-events: none;
+  animation: roll 1.6s cubic-bezier(.3,.7,.2,1) both;
+}
+.playhead::before {
+  content: "nov 2026"; position: absolute; top: 2px; left: -2px; transform: translateX(-100%);
+  background: #FF5D5D; color: #fff; font-family: var(--font-display); font-weight: 800; font-size: 12px;
+  padding: 2px 6px; border-radius: 3px 0 0 3px; white-space: nowrap;
+}
+@keyframes roll { from { left: calc(16px + 118px); } }
+@media (prefers-reduced-motion: reduce) { .playhead { animation: none; } }
+.tl-caption { font-size: 15px; color: var(--muted); margin-top: 10px; }
+
+/* Seções */
+section.block { padding: 72px 0 8px; scroll-margin-top: 56px; }
+.block-head { display: flex; align-items: center; gap: 14px; margin-bottom: 10px; }
+.swatch { width: 26px; height: 14px; border-radius: 3px; flex: none; }
+.swatch.m { background: var(--clip-montagem); }
+.swatch.au { background: var(--clip-autoral); }
+.swatch.f { background: var(--clip-formacao); }
+.swatch.e { background: var(--clip-educacao); }
+.block h2 { font-family: var(--font-display); font-weight: 800; font-size: clamp(44px, 6vw, 64px); line-height: .95; }
+.block-intro { max-width: 40em; color: var(--muted); margin-bottom: 28px; }
+
+/* Montagem */
+.job { display: grid; grid-template-columns: 280px minmax(0, 1fr); gap: 24px 40px; padding: 26px 0; border-top: 1px solid var(--line); }
+.job h3 { font-family: var(--font-display); font-weight: 800; font-size: 32px; line-height: 1; }
+.role { font-size: 16px; color: var(--muted); margin-top: 6px; font-variant-numeric: tabular-nums; }
+.job-desc { max-width: 40em; }
+.bin { list-style: none; margin: 14px 0 0; padding: 0; border-top: 1px solid var(--line); }
+.bin li { border-bottom: 1px solid var(--line); }
+.bin a {
+  display: flex; justify-content: space-between; align-items: baseline; gap: 16px;
+  padding: 10px 2px; text-decoration: none;
+}
+.bin a:hover .w-title { text-decoration: underline; text-underline-offset: 3px; }
+.w-title { font-size: 19px; font-style: italic; }
+.w-where { font-family: var(--font-display); font-weight: 700; font-size: 15px; color: var(--indigo); white-space: nowrap; }
+@media (max-width: 760px) {
+  .job { grid-template-columns: 1fr; gap: 10px; }
+  .bin a { flex-direction: column; gap: 2px; }
+}
+
+/* Reels */
+.reels { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 14px; }
+@media (max-width: 1080px) { .reels { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (max-width: 600px) { .reels { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; } }
+.reel {
+  aspect-ratio: 9 / 16; background: var(--panel); color: var(--panel-text); border-radius: 12px;
+  padding: 16px 14px 14px; display: flex; flex-direction: column; text-decoration: none; position: relative; overflow: hidden;
+}
+.reel::before {
+  content: ""; position: absolute; left: 0; top: 0; height: 4px; width: var(--reach); background: var(--clip-autoral);
+}
+.reel:hover { background: var(--panel-2); }
+.reel time { font-family: var(--font-display); font-weight: 700; font-size: 14px; }
+.reel h3 { font-family: var(--font-display); font-weight: 800; font-size: 23px; line-height: 1.02; color: var(--panel-strong); margin-top: 14px; }
+.reel p { font-size: 15px; line-height: 1.4; margin-top: 8px; }
+.views { margin-top: auto; font-family: var(--font-display); color: var(--panel-strong); }
+.views b { display: block; font-size: 30px; font-weight: 800; line-height: 1; font-variant-numeric: tabular-nums; }
+.views span { font-size: 14px; font-weight: 500; color: var(--panel-text); }
+@media (max-width: 600px) {
+  .reel { padding: 14px 12px 12px; }
+  .reel h3 { font-size: 20px; }
+  .reel p { font-size: 14px; }
+  .views b { font-size: 26px; }
+}
+.reels-foot { display: flex; flex-wrap: wrap; gap: 10px 24px; align-items: center; justify-content: space-between; margin-top: 16px; font-size: 15px; color: var(--muted); }
+.text-link { font-family: var(--font-display); font-weight: 700; font-size: 18px; color: var(--indigo); }
+
+/* Pesquisa */
+.research-lead { display: grid; grid-template-columns: 280px minmax(0, 1fr); gap: 16px 40px; padding: 26px 0; border-top: 1px solid var(--line); }
+.research-lead h3 { font-family: var(--font-display); font-weight: 800; font-size: 32px; line-height: 1; }
+.research-lead .big { font-size: 21px; line-height: 1.5; max-width: 34em; }
+.works { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
+.works li { display: grid; grid-template-columns: 64px 280px minmax(0, 1fr); gap: 6px 40px; padding: 16px 0; border-bottom: 1px solid var(--line); align-items: baseline; }
+.yr { font-family: var(--font-display); font-weight: 700; font-size: 18px; font-variant-numeric: tabular-nums; display: flex; align-items: center; gap: 8px; }
+.yr::before { content: ""; width: 8px; height: 8px; border-radius: 2px; background: var(--dot); flex: none; }
+.works h4 { margin: 0; font-size: 19px; font-weight: 500; font-style: italic; line-height: 1.3; }
+.works p { color: var(--muted); font-size: 17px; max-width: 38em; }
+.works p a { color: var(--indigo); text-underline-offset: 3px; }
+@media (max-width: 860px) {
+  .research-lead { grid-template-columns: 1fr; gap: 10px; }
+  .works li { grid-template-columns: 56px minmax(0, 1fr); }
+  .works li p { grid-column: 2; }
+}
+
+/* Docência */
+.teach { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 40px; }
+.teach article { padding: 24px 0; border-top: 1px solid var(--line); }
+.teach h3 { font-family: var(--font-display); font-weight: 800; font-size: 30px; line-height: 1.05; }
+.teach p { margin-top: 10px; max-width: 34em; }
+@media (max-width: 760px) { .teach { grid-template-columns: 1fr; } }
+
+/* Formação */
+.edu { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0 40px; }
+.edu > div { padding: 24px 0; border-top: 1px solid var(--line); }
+.edu h3 { font-family: var(--font-display); font-weight: 800; font-size: 26px; margin-bottom: 10px; }
+.edu ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+.edu li { font-size: 17px; line-height: 1.4; }
+.edu li span { display: block; color: var(--muted); font-size: 15px; font-variant-numeric: tabular-nums; }
+@media (max-width: 860px) { .edu { grid-template-columns: 1fr; } }
+
+/* Contato */
+.contact { padding: 72px 0 40px; scroll-margin-top: 56px; }
+.contact h2 { font-family: var(--font-display); font-weight: 800; font-size: clamp(44px, 6vw, 64px); line-height: .95; margin-bottom: 18px; }
+.mail { font-family: var(--font-display); font-weight: 800; font-size: clamp(30px, 6.4vw, 72px); line-height: 1; text-decoration: none; overflow-wrap: anywhere; color: var(--indigo); }
+.mail:hover { text-decoration: underline; text-decoration-thickness: 3px; text-underline-offset: 6px; }
+.contact-list { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0 40px; margin-top: 32px; }
+.contact-list a { display: block; padding: 14px 0; border-top: 1px solid var(--line); text-decoration: none; }
+.contact-list a span { display: block; font-family: var(--font-display); font-weight: 700; font-size: 15px; color: var(--muted); }
+.contact-list a strong { font-weight: 500; font-size: 19px; }
+.contact-list a:hover strong { text-decoration: underline; text-underline-offset: 3px; }
+@media (max-width: 760px) { .contact-list { grid-template-columns: 1fr; } }
+footer { padding: 28px 0 44px; color: var(--muted); font-size: 15px; border-top: 1px solid var(--line); }
+
+/* Players do YouTube (versão hospedada) */
+.videos { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px 16px; margin-top: 16px; }
+.videos + .bin { margin-top: 20px; }
+@media (max-width: 760px) { .videos { grid-template-columns: 1fr; } }
+.vid { margin: 0; }
+.vid .frame { position: relative; aspect-ratio: 16 / 9; border-radius: 8px; overflow: hidden; background: var(--panel); }
+.yt { all: unset; cursor: pointer; position: absolute; inset: 0; display: block; }
+.yt img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.yt .play { position: absolute; left: 50%; top: 50%; width: 64px; height: 44px; transform: translate(-50%, -50%); background: rgba(27, 29, 46, .82); border-radius: 10px; transition: background .15s; }
+.yt .play::after { content: ""; position: absolute; left: 26px; top: 13px; border-style: solid; border-width: 9px 0 9px 15px; border-color: transparent transparent transparent #fff; }
+.yt:hover .play { background: var(--clip-montagem); }
+.yt:focus-visible { outline: 3px solid var(--indigo); outline-offset: -3px; }
+.vid iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.vid figcaption { font-style: italic; font-size: 18px; line-height: 1.3; margin-top: 8px; }
+</style>
+</head>
+<body>
+
+<nav class="nav" aria-label="Seções">
+  <div class="wrap">
+    <a class="nav-name" href="#topo">Carolina Aleixo</a>
+    <div class="nav-links">
+      <a href="#pesquisa">Pesquisa</a>
+      <a href="#montagem">Montagem</a>
+      <a href="#reels">Reels</a>
+      <a href="#docencia">Docência</a>
+      <a href="#contato">Contato</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero wrap" id="topo">
+  <div class="hero-grid">
+    <div class="hero-text">
+      <h1>Carolina<br>Aleixo</h1>
+      <div class="hero-row">
+        <p class="lede">Pesquisadora de audiovisual e montadora no Rio de Janeiro. No mestrado em Comunicação da PUC-Rio, estudo telenovela, arquivo e identidades negras. Em dez anos de montagem, da Globo à Moldura, aprendi como uma narrativa se constrói e como ela chega ao público. Agora quero levar essas duas frentes para a pesquisa no mercado audiovisual.</p>
+        <div class="hero-links">
+      <a class="pill" href="mailto:carolina.aleixor@gmail.com">E-mail</a>
+      <a class="pill" href="https://www.linkedin.com/in/carolina-aleixo/">LinkedIn</a>
+      <a class="pill" href="https://www.instagram.com/carolinaleixo_/">Instagram</a>
+    </div>
+      </div>
+    </div>
+    <figure class="portrait">
+      <img src="carol.jpg" width="900" height="1200" alt="Carolina Aleixo sorrindo, de óculos e cardigã azul, com o mar ao fundo">
+    </figure>
+  </div>
+</header>
+
+<div class="wrap">
+  <figure class="tl-figure">
+    <div class="tl-box">
+      <div class="tl-head"><strong>Trajetória</strong><span>2012 a 2026</span></div>
+      <div class="tl-scroll" id="tl-scroll">
+        <div class="tl">
+          <div class="tl-row" aria-hidden="true">
+            <div class="tl-corner"></div>
+            <div class="ruler">
+              <span style="--y:2012">2012</span><span style="--y:2013">2013</span><span style="--y:2014">2014</span>
+              <span style="--y:2015">2015</span><span style="--y:2016">2016</span><span style="--y:2017">2017</span>
+              <span style="--y:2018">2018</span><span style="--y:2019">2019</span><span style="--y:2020">2020</span>
+              <span style="--y:2021">2021</span><span style="--y:2022">2022</span><span style="--y:2023">2023</span>
+              <span style="--y:2024">2024</span><span style="--y:2025">2025</span><span style="--y:2026">2026</span>
+              <span style="--y:2027">2027</span>
+            </div>
+          </div>
+          <div class="tl-row">
+            <div class="tl-label"><b>V4</b>Autoral</div>
+            <div class="lane v" aria-label="Trabalhos autorais">
+              <a class="clip au" href="#pesquisa" style="--a:2018;--b:2019" title="Imagens do Calabouço, roteiro e pesquisa, 2018">Calabouço</a>
+              <a class="clip au" href="#pesquisa" style="--a:2024;--b:2025" title="Nostalgia, livro de poemas, 2024">Nostalgia</a>
+              <a class="clip au tiny" href="#reels" style="--a:2026.6;--b:2026.87" data-label="Reels" aria-label="Reels no Instagram, 2026" title="Reels no Instagram, 2026"></a>
+            </div>
+          </div>
+          <div class="tl-row">
+            <div class="tl-label"><b>V3</b>Montagem</div>
+            <div class="lane v" aria-label="Montagem">
+              <a class="clip m" href="#the-conversation" style="--a:2025;--b:2026.5" title="The Conversation Brasil, editora de redes sociais, 2025 a 2026">The Conversation</a>
+            </div>
+          </div>
+          <div class="tl-row">
+            <div class="tl-label"><b>V2</b>Montagem</div>
+            <div class="lane v" aria-label="Montagem">
+              <a class="clip m" href="#moldura" style="--a:2025;--b:2026.87" title="Moldura, montadora, 2025 até hoje">Moldura</a>
+            </div>
+          </div>
+          <div class="tl-row">
+            <div class="tl-label"><b>V1</b>Montagem</div>
+            <div class="lane v" aria-label="Montagem">
+              <a class="clip m" href="#imagem-cultural" style="--a:2016;--b:2018" title="Imagem Cultural, estágio de produção, 2016 a 2017">Imagem Cultural</a>
+              <a class="clip m" href="#redes-da-mare" style="--a:2019;--b:2021" title="Redes da Maré, videomaker, 2019 a 2020">Redes da Maré</a>
+              <a class="clip m" href="#aic" style="--a:2021;--b:2021.9" title="Curso de documentário, Academia Internacional de Cinema, 2021">AIC</a>
+              <a class="clip m" href="#globo" style="--a:2022;--b:2026.87" title="Globo, editora de mídias audiovisuais, 2022 até hoje">Globo</a>
+            </div>
+          </div>
+          <div class="tl-row first-a">
+            <div class="tl-label"><b>A1</b>Formação</div>
+            <div class="lane a" aria-label="Formação">
+              <a class="clip f" href="#formacao" style="--a:2012;--b:2018" title="Bacharelado em Cinema e Audiovisual, UFF, 2012 a 2017">Cinema e Audiovisual, UFF</a>
+              <a class="clip f" href="#formacao" style="--a:2019;--b:2022" title="Licenciatura em Letras, UERJ, 2019 a 2021">Letras, UERJ</a>
+              <a class="clip f" href="#pesquisa" style="--a:2026.17;--b:2026.87" title="Mestrado em Comunicação, PUC-Rio, em curso">PUC</a>
+            </div>
+          </div>
+          <div class="tl-row">
+            <div class="tl-label"><b>A2</b>Educação</div>
+            <div class="lane a" aria-label="Educação e mediação">
+              <a class="clip e" href="#formacao" style="--a:2015;--b:2015.85" title="Curso de Formação de Mediadores, MAR, 2015">MAR</a>
+              <a class="clip e" href="#docencia" style="--a:2017;--b:2021" title="Galpão Bela Maré, educadora, 2017 a 2020">CineBela, Galpão Bela Maré</a>
+              <a class="clip e tiny" href="#docencia" style="--a:2026.55;--b:2026.87" data-label="Estágio docente" aria-label="Estágio docente, PUC-Rio, 2026" title="Estágio docente, PUC-Rio, 2026"></a>
+            </div>
+          </div>
+          <div class="playhead" aria-hidden="true"></div>
+        </div>
+      </div>
+    </div>
+    <figcaption class="tl-caption">Cada faixa é uma frente de trabalho. Toque num trecho para ir até ele.</figcaption>
+  </figure>
+</div>
+
+<main class="wrap">
+
+  <section class="block" id="pesquisa">
+    <div class="block-head"><span class="swatch f" aria-hidden="true"></span><h2>Pesquisa e escrita</h2></div>
+
+    <div class="research-lead">
+      <div><h3>Mestrado em Comunicação</h3><p class="role">PPGCOM PUC-Rio, bolsista CAPES<br>Orientação: Profa. Dra. Tatiana Siciliano</p></div>
+      <p class="big">Minha pesquisa estuda <i>A Nobreza do Amor</i> (TV Globo, 2026) como fábula afro-brasileira: a construção de mundos ficcionais, o melodrama geográfico e a imaginação de uma identidade nacional ligada à África.</p>
+    </div>
+
+    <ul class="works">
+      <li style="--dot: var(--clip-formacao)">
+        <span class="yr">2026</span>
+        <h4>A Nobreza do Amor: uma fábula afro-brasileira</h4>
+        <p>Apresentação no XVIII PÓSCOM, GT7 Encontro Discente, PUC-Rio.</p>
+      </li>
+      <li style="--dot: var(--clip-formacao)">
+        <span class="yr">2026</span>
+        <h4>Identidades negras em disputa</h4>
+        <p>Resumo expandido para o Intercom, GP Comunicação Antirracista e Pensamento Afrodiaspórico. Análise de uma cena da novela com Stuart Hall e Erving Goffman.</p>
+      </li>
+      <li style="--dot: var(--clip-autoral)">
+        <span class="yr">2024</span>
+        <h4>Nostalgia</h4>
+        <p>Livro de poemas sobre luto e memória, publicado pela TAUP. <a href="https://bit.ly/compre-nostalgia">Comprar o livro</a></p>
+      </li>
+      <li style="--dot: var(--clip-autoral)">
+        <span class="yr">2018</span>
+        <h4>Imagens do Calabouço</h4>
+        <p>Roteiro e pesquisa de longa documental sobre memória política brasileira, aprovado no edital de desenvolvimento do FSA.</p>
+      </li>
+    </ul>
+  </section>
+
+  <section class="block" id="montagem">
+    <div class="block-head"><span class="swatch m" aria-hidden="true"></span><h2>Montagem</h2></div>
+    <p class="block-intro">Telejornalismo, filmes de memória, vídeo-ensaio e documentário.</p>
+
+    <article class="job" id="globo">
+      <div><h3>Globo</h3><p class="role">Editora de Mídias Audiovisuais II<br>2022 até hoje</p></div>
+      <div>
+        <p class="job-desc">Edição de conteúdo jornalístico em colaboração com equipes multidisciplinares. Algumas reportagens:</p>
+        <ul class="bin">
+          <li><a href="https://g1.globo.com/rj/rio-de-janeiro/rj1/video/reliquia-ritinha-da-portela-13381224.ghtml"><span class="w-title">Ritinha da Portela: um legado do samba</span><span class="w-where">RJ1, g1</span></a></li>
+          <li><a href="https://globoplay.globo.com/v/13771124/"><span class="w-title">Reportagem especial: cultura e comunidade</span><span class="w-where">Globoplay</span></a></li>
+          <li><a href="https://g1.globo.com/rj/rio-de-janeiro/rj1/video/museu-do-samba-estreia-mostra-infantil-samba-nego-miudinho-13788075.ghtml"><span class="w-title">Museu do Samba estreia a mostra infantil Samba Nego Miudinho</span><span class="w-where">RJ1, g1</span></a></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="job" id="moldura">
+      <div><h3>Moldura</h3><p class="role">Montadora<br>2025 até hoje</p></div>
+      <div>
+        <p class="job-desc">Montagem de filmes sobre memória e histórias de vida, com linguagem de cinema.</p>
+        <div class="videos">
+          <figure class="vid"><div class="frame"><button class="yt" type="button" data-id="sbkGQfRuvtg" aria-label="Assistir Fred &amp; Ernestina"><img src="https://i.ytimg.com/vi/sbkGQfRuvtg/hqdefault.jpg" alt="" loading="lazy"><span class="play" aria-hidden="true"></span></button></div><figcaption>Fred &amp; Ernestina</figcaption></figure>
+          <figure class="vid"><div class="frame"><button class="yt" type="button" data-id="llzCIznhlAU" aria-label="Assistir This is Brett"><img src="https://i.ytimg.com/vi/llzCIznhlAU/hqdefault.jpg" alt="" loading="lazy"><span class="play" aria-hidden="true"></span></button></div><figcaption>This is Brett</figcaption></figure>
+        </div>
+      </div>
+    </article>
+
+    <article class="job" id="the-conversation">
+      <div><h3>The Conversation Brasil</h3><p class="role">Editora de redes sociais<br>2025 a 2026</p></div>
+      <div>
+        <p class="job-desc">Edição de conteúdo para as redes sociais da plataforma. O vídeo de maior alcance que fiz para eles:</p>
+        <ul class="bin">
+          <li><a href="https://www.instagram.com/reel/DVuJv0ih5VY/"><span class="w-title">Um registro raro: jaguatirica flagrada por armadilhas fotográficas em Minas Gerais</span><span class="w-where">Reel, Instagram</span></a></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="job" id="joriam-ramos">
+      <div><h3>Joriam Ramos</h3><p class="role">Edição de vídeo-ensaios</p></div>
+      <div>
+        <p class="job-desc">Montagem de vídeo-ensaios em inglês para o canal do escritor, sobre animação, fantasia e escrita.</p>
+        <div class="videos">
+          <figure class="vid"><div class="frame"><button class="yt" type="button" data-id="E_uXLyA5jis" aria-label="Assistir Kiki is Not a Delivery Service"><img src="https://i.ytimg.com/vi/E_uXLyA5jis/hqdefault.jpg" alt="" loading="lazy"><span class="play" aria-hidden="true"></span></button></div><figcaption>Kiki is Not a Delivery Service</figcaption></figure>
+          <figure class="vid"><div class="frame"><button class="yt" type="button" data-id="jOu2iJ0yWVM" aria-label="Assistir What is Frieren about after all?"><img src="https://i.ytimg.com/vi/jOu2iJ0yWVM/hqdefault.jpg" alt="" loading="lazy"><span class="play" aria-hidden="true"></span></button></div><figcaption>What is Frieren about after all?</figcaption></figure>
+          <figure class="vid"><div class="frame"><button class="yt" type="button" data-id="ayJts5s3tF0" aria-label="Assistir Writing Factions: Hogwarts Houses vs Guilds of Ravnica"><img src="https://i.ytimg.com/vi/ayJts5s3tF0/hqdefault.jpg" alt="" loading="lazy"><span class="play" aria-hidden="true"></span></button></div><figcaption>Writing Factions: Hogwarts Houses vs Guilds of Ravnica</figcaption></figure>
+        </div>
+      </div>
+    </article>
+
+    <article class="job" id="redes-da-mare">
+      <div><h3>Redes da Maré</h3><p class="role">Videomaker<br>2019 a 2020</p></div>
+      <div>
+        <p class="job-desc">Produção de vídeos institucionais e jornalísticos.</p>
+        <div class="videos">
+          <figure class="vid"><div class="frame"><iframe src="https://www.youtube-nocookie.com/embed/videoseries?list=PLrrn9xxDO6P_Wjsl1U6Z3VoIBPojxjQwQ" title="Vídeos para a Redes da Maré" loading="lazy" allow="encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe></div><figcaption>Vídeos para a Redes da Maré</figcaption></figure>
+        </div>
+      </div>
+    </article>
+
+    <article class="job" id="galpao-video">
+      <div><h3>Galpão Bela Maré</h3><p class="role">Educadora<br>2017 a 2020</p></div>
+      <div>
+        <p class="job-desc">Vídeo publicado pelo Observatório de Favelas.</p>
+        <ul class="bin">
+          <li><a href="https://observatoriodefavelas.org.br/para-sermos-os-moleques-pretos-de-asa/"><span class="w-title">Para sermos os moleques pretos de asa</span><span class="w-where">Observatório de Favelas</span></a></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="job" id="aic">
+      <div><h3>Academia Internacional de Cinema</h3><p class="role">Curso de documentário<br>2021</p></div>
+      <div>
+        <p class="job-desc">Exercícios práticos de narrativa documental.</p>
+        <div class="videos">
+          <figure class="vid"><div class="frame"><button class="yt" type="button" data-id="Dm6_ifmiBqM" aria-label="Assistir Álbum de autorretratos feitos por outros e por mim mesma"><img src="https://i.ytimg.com/vi/Dm6_ifmiBqM/hqdefault.jpg" alt="" loading="lazy"><span class="play" aria-hidden="true"></span></button></div><figcaption>Álbum de autorretratos feitos por outros e por mim mesma</figcaption></figure>
+          <figure class="vid"><div class="frame"><button class="yt" type="button" data-id="fH2dniT-kC0" aria-label="Assistir Uma casa de farinha"><img src="https://i.ytimg.com/vi/fH2dniT-kC0/hqdefault.jpg" alt="" loading="lazy"><span class="play" aria-hidden="true"></span></button></div><figcaption>Uma casa de farinha</figcaption></figure>
+          <figure class="vid"><div class="frame"><button class="yt" type="button" data-id="l2e2X2qoFYM" aria-label="Assistir Dona Rita, exercício Vozes da cidade"><img src="https://i.ytimg.com/vi/l2e2X2qoFYM/hqdefault.jpg" alt="" loading="lazy"><span class="play" aria-hidden="true"></span></button></div><figcaption>Dona Rita, exercício Vozes da cidade</figcaption></figure>
+        </div>
+      </div>
+    </article>
+
+    <article class="job" id="imagem-cultural">
+      <div><h3>Imagem Cultural</h3><p class="role">Estagiária de produção<br>2016 a 2017</p></div>
+      <div>
+        <p class="job-desc">Captação e edição de material audiovisual em eventos culturais.</p>
+      </div>
+    </article>
+  </section>
+
+  <section class="block" id="reels">
+    <div class="block-head"><span class="swatch au" aria-hidden="true"></span><h2>Reels</h2></div>
+    <p class="block-intro">No Instagram, comento telenovela, teoria e literatura em vídeos curtos. Os três reels sobre <i>A Nobreza do Amor</i> somam mais de 140 mil visualizações.</p>
+
+    <div class="reels">
+      <a class="reel" href="https://www.instagram.com/reel/DdC_bNbJxHQ/" style="--reach:100%">
+        <time datetime="2026-09-08">set 2026</time>
+        <h3>Identidades negras em disputa</h3>
+        <p>Uma cena de <i>A Nobreza do Amor</i> lida a partir de Stuart Hall.</p>
+        <div class="views"><b>62 mil</b><span>visualizações</span></div>
+      </a>
+      <a class="reel" href="https://www.instagram.com/reel/DfXkRWips7x/" style="--reach:71%">
+        <time datetime="2026-11-05">nov 2026</time>
+        <h3>Tonho tirou a espada do baobá</h3>
+        <p>Comentário sobre <i>A Nobreza do Amor</i>.</p>
+        <div class="views"><b>44,2 mil</b><span>visualizações</span></div>
+      </a>
+      <a class="reel" href="https://www.instagram.com/reel/DePqDcWp5DH/" style="--reach:60%">
+        <time datetime="2026-10-08">out 2026</time>
+        <h3>A cena do capítulo de ontem</h3>
+        <p>Comentário rápido sobre <i>A Nobreza do Amor</i>.</p>
+        <div class="views"><b>37,4 mil</b><span>visualizações</span></div>
+      </a>
+      <a class="reel" href="https://www.instagram.com/reel/Dcls4KkxcGX/" style="--reach:12%">
+        <time datetime="2026-08-28">ago 2026</time>
+        <h3>Leitura matinal</h3>
+        <p>O autorretrato literário de Gabriel García Márquez.</p>
+        <div class="views"><b>7,6 mil</b><span>visualizações</span></div>
+      </a>
+      <a class="reel" href="https://www.instagram.com/reel/DdQAkIiNIUJ/" style="--reach:8%">
+        <time datetime="2026-09-13">set 2026</time>
+        <h3>Poetas negros conhecidos e desconhecidos</h3>
+        <p>Um trecho de Maya Angelou.</p>
+        <div class="views"><b>4,8 mil</b><span>visualizações</span></div>
+      </a>
+      <a class="reel" href="https://www.instagram.com/reel/Dc6N3BZx0Ua/" style="--reach:4%">
+        <time datetime="2026-09-05">set 2026</time>
+        <h3>Leitura matinal 2</h3>
+        <p>Um trecho de <i>Capitães da Areia</i>, de Jorge Amado.</p>
+        <div class="views"><b>2,5 mil</b><span>visualizações</span></div>
+      </a>
+    </div>
+    <div class="reels-foot">
+      <span>Visualizações contadas em novembro de 2026. A barra no topo de cada vídeo mostra o alcance em relação ao maior.</span>
+      <a class="text-link" href="https://www.instagram.com/carolinaleixo_/">Ver todos no Instagram</a>
+    </div>
+  </section>
+
+
+  <section class="block" id="docencia">
+    <div class="block-head"><span class="swatch e" aria-hidden="true"></span><h2>Docência e mediação</h2></div>
+    <div class="teach">
+      <article>
+        <h3>Estágio docente, PUC-Rio</h3>
+        <p class="role">Graduação em Estudos de Mídia, 2026</p>
+        <p>Preparei aulas e debates para a turma, como as análises dos episódios piloto de <i>The Bear</i> e <i>Fleabag</i>, com estudos dirigidos e perguntas norteadoras.</p>
+      </article>
+      <article>
+        <h3>CineBela, Galpão Bela Maré</h3>
+        <p class="role">Educadora, 2017 a 2020</p>
+        <p>Atuei na criação e gestão do CineBela, cineclube na Maré que se tornou sala de cinema, com curadoria de sessões, mediação cultural e formação de público.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="block" id="formacao">
+    <div class="block-head"><span class="swatch f" aria-hidden="true"></span><h2>Formação</h2></div>
+    <div class="edu">
+      <div>
+        <h3>Acadêmica</h3>
+        <ul>
+          <li>Mestrado em Comunicação, PUC-Rio<span>em curso, bolsista CAPES</span></li>
+          <li>Bacharelado em Cinema e Audiovisual, UFF<span>2012 a 2017</span></li>
+          <li>Licenciatura em Letras, Português e Literaturas, UERJ<span>2019 a 2021, incompleta</span></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Cursos</h3>
+        <ul>
+          <li>Roteiro para Jornalismo e Esporte, Globo<span>2025</span></li>
+          <li>Edição de vídeo e pós-produção, Proclass<span>2022</span></li>
+          <li>Documentário, Academia Internacional de Cinema<span>2021</span></li>
+          <li>Abolicionismos penais, Espaço Cult<span>2020</span></li>
+          <li>Cinema africano pela descolonização das telas, Ficine<span>2019</span></li>
+          <li>Arte, ação e pensamento anticoloniais, MAR<span>2019</span></li>
+          <li>III Curso de Formação de Mediadores, MAR<span>2015</span></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Ferramentas e idiomas</h3>
+        <ul>
+          <li>Avid Media Composer</li>
+          <li>Pacote Adobe, vídeo e imagem</li>
+          <li>CapCut e Canva</li>
+          <li>Português, nativo<span>Inglês, avançado</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<section class="contact wrap" id="contato">
+  <h2>Contato</h2>
+  <a class="mail" href="mailto:carolina.aleixor@gmail.com">carolina.aleixor@gmail.com</a>
+  <div class="contact-list">
+    <a href="https://wa.me/5521996445212"><span>WhatsApp</span><strong>(21) 99644-5212</strong></a>
+    <a href="https://www.linkedin.com/in/carolina-aleixo/"><span>LinkedIn</span><strong>linkedin.com/in/carolina-aleixo</strong></a>
+    <a href="https://www.instagram.com/carolinaleixo_/"><span>Instagram</span><strong>@carolinaleixo_</strong></a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">Carolina Aleixo, Rio de Janeiro, 2026.</div>
+</footer>
+
+<script>
+  (function () {
+    var s = document.getElementById('tl-scroll');
+    if (!s || s.scrollWidth <= s.clientWidth) return;
+    var w = s.firstElementChild.offsetWidth;
+    var lane = w - 32 - 118;
+    var x = 16 + 118 + (2021.6 - 2012) / 16 * lane;
+    s.scrollLeft = Math.max(0, x - 122);
+  })();
+</script>
+<script>
+  document.querySelectorAll('.yt').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var f = document.createElement('iframe');
+      f.src = 'https://www.youtube-nocookie.com/embed/' + b.dataset.id + '?autoplay=1&rel=0';
+      f.title = b.getAttribute('aria-label').replace(/^Assistir /, '');
+      f.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
+      f.allowFullscreen = true;
+      b.replaceWith(f);
+    });
+  });
+</script>
+</body>
+</html>
